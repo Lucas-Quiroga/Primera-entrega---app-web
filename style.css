@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header {
     /* background: linear-gradient(var(--black), var(--black2)); */
     overflow: hidden;
@@ -6,13 +12,14 @@ header {
     display: block;
     background-image: url(img/foto-header.jpg);
     background-size: cover;
+    text-align: center;
 }
 
 hr {
     background-image: linear-gradient(to right, transparent, var(--primary), transparent);
     border: 0;
     height: .1rem;
-    max-width: 100%
+    max-width: 100%;
 }
 
 body {
@@ -42,9 +49,10 @@ img {
     padding: 0;
     height: 40px;
     width: 100%;
-    /* background: lightcyan; */
+    background: beige;
     box-sizing: border-box;
     top: 0px;
+    z-index: 10;
 }
 
 #navbar li{
@@ -88,3 +96,40 @@ img {
 #nombre-barra span{
     text-decoration: none;
 }
+
+#productos{
+    display: flex;
+    z-index: 0;
+}
+
+#titulo-producto{
+    text-align: center;
+}
+
+.card-producto {
+    margin: 20px auto;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    height: auto;
+}
+
+#Servicios {
+    display: flex;
+    z-index: 0;
+}
+
+#titulo-servicio{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button-product{
+    position: relative;
+    left: 48%;
+}
+
+#footer{
+    text-align: center;
+}
+
