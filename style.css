@@ -133,3 +133,14 @@ img {
     text-align: center;
 }
 
+.formulario{
+    padding: 20px;
+    height: 50%;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    left: 50vh;
+    /* border: 2px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

@@ -104,6 +104,9 @@ for (const servicio of servicios){
     crearCard2(servicio)
 }
 
+
+
+
 // //Preguntamos si quiere ver el catalogo de productos//
 // let askClientIms = prompt("¿Ver detalles de productos?");
 
