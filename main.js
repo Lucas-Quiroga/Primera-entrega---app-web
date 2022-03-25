@@ -104,6 +104,43 @@ for (const servicio of servicios){
     crearCard2(servicio)
 }
 
+// Formulario
+// Mi idea es que cuando ingresen los datos en el formulario esos mismos datos al tocar el boton de enviar se guarden en el LocalStorage del navegador sin tener que usar una api
+
+const datosForm = [];
+
+let formulario = document.getElementById("formulario");
+formulario.addEventListener("submit", almacenarDatos);
+
+let inputNameUsuario = document.getElementById("inputNombre");
+let inputLastNameUsuario = document.getElementById("inputApellido");
+let inputEmailUsuario = document.getElementById("inputEmail");
+
+let enJSON = JSON.stringify(inputNameUsuario);
+
+// almacenarDatosUsuario.addEventListener("input", ()=>{
+//     localStorage.setItem("Nombre: ",inputNameUsuario);
+//     localStorage.setItem("Apellido: ",inputLastNameUsuario);
+//     localStorage.setItem("Email: ",inputEmailUsuario);
+
+//     datosForm.push(inputNameUsuario);
+//     datosForm.push(inputLastNameUsuario);
+//     datosForm.push(inputEmailUsuario);
+// })
+
+function almacenarDatos(e){
+    e.preventDefault();
+    localStorage.setItem("Nombre: ",enJSON);
+    localStorage.setItem("Apellido: ",inputLastNameUsuario);
+    localStorage.setItem("Email: ",inputEmailUsuario);
+
+    datosForm.push(inputNameUsuario);
+    datosForm.push(inputLastNameUsuario);
+    datosForm.push(inputEmailUsuario);
+    alert("enviado con exito")
+}
+
+
 
 
 
