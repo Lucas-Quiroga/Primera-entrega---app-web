@@ -1,9 +1,17 @@
+/* GENERAL */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* COLORES */
+:root {
+    --color-blanco: #f5f5f5;
+    --color-gris: #444444;
+}
+
+/* HEADER */
 header {
     /* background: linear-gradient(var(--black), var(--black2)); */
     overflow: hidden;
@@ -15,21 +23,6 @@ header {
     text-align: center;
 }
 
-hr {
-    background-image: linear-gradient(to right, transparent, var(--primary), transparent);
-    border: 0;
-    height: .1rem;
-    max-width: 100%;
-}
-
-body {
-    font-family: Montserrat, sans-serif;
-    font-size: 14px;
-    text-align: center;
-    margin: 0;
-    display: block;
-}
-
 .circulo {
     border-radius: 50%;
 }
@@ -39,6 +32,8 @@ img {
     width: 200px;
     height: 200px;
 }
+
+/* BARRA DE NAVEGACION */
 
 #navbar {
     display: block;
@@ -97,73 +92,85 @@ img {
     text-decoration: none;
 }
 
-#productos{
+/* SERVICIOS */
+
+#servicios-div{
     display: flex;
-    z-index: 0;
-}
-
-#titulo-producto{
-    text-align: center;
-}
-
-.card-producto {
-    margin: 20px auto;
-    text-align: center;
-    justify-content: center;
-    padding: 20px;
-    height: auto;
-}
-
-
-#Servicios {
-    display: flex;
-    z-index: 0;
+    justify-content: space-around;
 }
 
 #titulo-servicio{
     text-align: center;
-    margin-top: 30px;
-}
-
-.button-product{
-    position: relative;
-    left: 48%;
-}
-
-#footer{
-    text-align: center;
-}
-
-#formulario{
-    padding: 20px;
-    height: 50%;
-    width: 50%;
     justify-content: center;
-    text-align: center;
-    position: relative;
-    left: 50vh;
-    /* border: 2px solid black; */
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 10px;
 }
 
-/* CARRITO */
-
-:root {
-    --color-blanco: #f5f5f5;
-    --color-gris: #444444;
-}
-
-#container {
+#sec-servicios{
     display: flex;
     flex-direction: row;
 }
 
-#sec-insumos {
-    width: 80%;
+/* INSUMOS */
+
+#productos-div{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#titulo-producto{
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.Producto{
+    display: flex;
+    z-index: 0;
+}
+
+#sec-insumos{
+    display: flex;
     justify-content: space-around;
     align-items: flex-end;
+}
+
+/* CARRITO */
+
+#carrito-div{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#sec-carrito {
+    margin-top: 50px;
+    font-family: oswald, sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* background-color: blue; */
+    border-radius: 10px;
+    top: 10px;
+}
+
+#sec-carrito h2{
+    font-size: 20px;
+}
+
+#sec-carrito div {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+/* CARTAS INSUMOS */
+
+.card-producto {
+    margin: 20px auto;
+    /* text-align: center;
+    justify-content: center; */
+    padding: 20px;
+    height: auto;
 }
 
 .card-producto:hover {
@@ -198,124 +205,47 @@ img {
     background-color: var(--color-gris);
 }
 
-.info-producto {
-    display: flex;
-    flex-direction: column;
-}
-
-#sec-carrito {
-    font-family: oswald, sans-serif;
-    width: 30%;
-    height: 30%;
-    margin: 30px;
+/* FORMULARIO */
+#formulario{
+    margin: 20px;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: lightcoral;
-    border-radius: 10px;
-    position: sticky;
-    top: 10px;
-}
-
-#sec-carrito div {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-}
-
-#sec-carrito:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
-
-  * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-:root {
-    --color-blanco: #f5f5f5;
-    --color-gris: #444444;
-}
-
-#container {
-    display: flex;
-    flex-direction: row;
-}
-
-#sec-insumos {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
-}
-
-.card-product {
-    width: 10%;
-    margin: 10px;
-    text-align: center;
-}
-
-.card-product:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-.font {
-    font-size: 18px;
-    font-family: oswald, sans-serif;
-}
-
-.img-container {
-    overflow: hidden;
-    position: relative;
-}
-
-.img-container img {
-    width: 90%;
     height: 50%;
-    margin: 10px;
-}
-
-.boton {
-    font-size: 15px;
-    font-family: oswald, sans-serif;
     width: 50%;
-    padding: 10px;
-    margin-top: 10px;
-    text-align: center;
-    align-self: center;
-    color: var(--color-blanco);
-    background-color: var(--color-gris);
-}
-
-.info-producto {
-    display: flex;
-    flex-direction: column;
-}
-
-#sec-carrito {
-    font-family: oswald, sans-serif;
-    width: 30%;
-    height: 30%;
-    margin: 30px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: lightcoral;
-    border-radius: 10px;
-    position: sticky;
-    top: 10px;
-}
-
-#sec-carrito div {
-    display: flex;
     justify-content: center;
-    margin: 10px;
+    text-align: center;
+    position: relative;
+    left: 45vh;
+    /* border: 2px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-#sec-carrito:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
+#titulo-form{
+    text-align: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.form-label{
+    margin-top: 10px;
+}
+
+#footer{
+    text-align: center;
+}
+
+  /* COSAS INNECESARIAS */
+
+  /* body {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+    display: block;
+} */
+
+/* hr {
+    background-image: linear-gradient(to right, transparent, var(--primary), transparent);
+    border: 0;
+    height: .1rem;
+    max-width: 100%;
+} */
