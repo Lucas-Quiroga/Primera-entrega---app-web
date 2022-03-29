@@ -74,30 +74,3 @@ for (const insumo of insumos){
                                    insumosElegidos.appendChild(containerGeneral);
                                 document.getElementById(`${insumo.id}`).onclick = () => meterAlCarro(`${insumo.id}`);
 };
-
-// let serviciosInsumos = document.getElementById("sec-insumos");
-// function crearCard (insumos) {
-//     //primero creo el div contenedor para cada card y aplico estilos de bootstrap
-//     let card = document.createElement("div");
-//     card.setAttribute("class", "card card-producto");
-//     card.style.width = "18rem";
-//     //le asigno las cards al elemento padre section
-//     serviciosInsumos.appendChild(card);
-//     //creo divs que contengan las imagenes de los productos y se los asigno como hijos a las cards
-//     let cardImg = document.createElement("div");
-//     cardImg.innerHTML = `<img src="./img/${insumos.id}.jpg" class="card-img-top" alt="${insumos.producto}"></img>`;
-//     card.appendChild(cardImg);
-//     //creo divs que contengan los nombres de los productos y los botones, despues se los asigno como hijos a las cards
-//     let cardBody = document.createElement("div");
-//     cardBody.innerHTML = `<h5 class="card-title">${insumos.producto}</h5>
-//                             <p class="card-text"> Precio: $${insumos.precio} </p>
-//                             <button class="btn btn-dark">Comprar</button>`;
-//     card.appendChild(cardBody);
-//     cardBody.setAttribute("class", "card-body");
-//     serviciosInsumos.appendChild(card);
-//                                 document.getElementById(`${insumo.id}`).onclick = () => meterAlCarro(`${insumo.id}`);
-// };
-
-// for (const insumo of insumos) {
-//    crearCard(insumo);
-// }

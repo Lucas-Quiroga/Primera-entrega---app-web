@@ -1,9 +1,12 @@
 // Formulario
+<<<<<<< HEAD
 // Mi idea es que cuando ingresen los datos en el formulario esos mismos datos al tocar el boton de enviar se guarden en el LocalStorage del navegador sin tener que usar una api
 const nombreUser = [];
 const apellidoUser = [];
 const emailUser = [];
 const comentarioUser = [];
+=======
+>>>>>>> 8bdcc3af0127a1369afb21eb20904464568ea2e8
 
 let botonEnvioForm = document.getElementById("botonEnvio");
 botonEnvioForm.addEventListener("click", almacenarDatos);
