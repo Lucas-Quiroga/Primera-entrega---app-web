@@ -1,12 +1,4 @@
 // Formulario
-<<<<<<< HEAD
-// Mi idea es que cuando ingresen los datos en el formulario esos mismos datos al tocar el boton de enviar se guarden en el LocalStorage del navegador sin tener que usar una api
-const nombreUser = [];
-const apellidoUser = [];
-const emailUser = [];
-const comentarioUser = [];
-=======
->>>>>>> 8bdcc3af0127a1369afb21eb20904464568ea2e8
 
 let botonEnvioForm = document.getElementById("botonEnvio");
 botonEnvioForm.addEventListener("click", almacenarDatos);
@@ -18,12 +10,21 @@ let inputComentarioUsuario = document.getElementById("textArea")
 
 function almacenarDatos(e){
     e.preventDefault();
-
+    Swal.fire({
+        // imageUrl: './imgAlerts/alertpic.jpg',
+        // imgWidth: 400,
+        // imgHeight: 200,
+        // imageAlt: 'Titulo img',
+        width: 2500,
+        title: 'Enviado con exito',
+        text: 'En breves nos pondremos en contacto!',
+        icon: 'success',
+        confirmButtonText: 'Salir'
+    })
     localStorage.setItem("Nombre:", JSON.stringify(inputNameUsuario.value));
     localStorage.setItem("Apellido:", JSON.stringify(inputLastNameUsuario.value));
     localStorage.setItem("Email:", JSON.stringify(inputEmailUsuario.value));
     localStorage.setItem("Comentario:", JSON.stringify(inputComentarioUsuario.value));
-    alert("enviado con exito");
 }
 
 // meterAlArray = () => {

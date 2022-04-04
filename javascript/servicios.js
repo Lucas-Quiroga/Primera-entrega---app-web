@@ -32,7 +32,7 @@ function crearCard2 (servicios) {
     <p class="card-text">  ${servicios.detalle} </p>
     <p class="card-text"> Duración: ${servicios.duracion} </p>
     <p class="card-text"> Precio: $${servicios.precio} </p>
-    <button class="btn btn-dark">Solicitar información</button>`;
+    <a href="#formulario"><button type="button" class="btn btn-dark">Solicitar información</button></a>`;
     card2.appendChild(cardBody2);
     cardBody2.setAttribute("class", "card-body");
 }

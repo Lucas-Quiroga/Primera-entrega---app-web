@@ -35,7 +35,18 @@ function carritoEnCero(){
 
 boton.onclick = () => {
     const precioResultado = precioTotal.innerText;
-    alert(`Total a pagar: $${precioResultado}`);
+    // alert(`Total a pagar: $${precioResultado}`);
+    Swal.fire({
+        // imageUrl: './imgAlerts/alertpic.jpg',
+        // imgWidth: 400,
+        // imgHeight: 200,
+        // imageAlt: 'Titulo img',
+        width: 2500,
+        title: `Total a pagar: $${precioResultado}`,
+        text: 'En breves nos pondremos en contacto!',
+        icon: 'success',
+        confirmButtonText: 'Salir'
+    })
     carritoEnCero();
 }
 
@@ -45,6 +56,33 @@ function meterAlCarro(id){
     carrito.push(insumos.find(e => e.id == id));
     localStorage.setItem("carrito", JSON.stringify(carrito));
     sumaDeTotalCarrito();
+    Toastify({
+        text: "Agregado al carrito",
+        duration: 3000,
+        className: "textoToastify",
+        style: {
+            background: 'lightgreen'
+        },
+        onClick: () => {
+            Swal.fire({
+                title: 'Deseas eliminar este articulo?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                  )
+                }
+              })
+            }
+}).showToast()
 }
 
 function sumaDeTotalCarrito(){
