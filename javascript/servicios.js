@@ -51,7 +51,6 @@ function agregueServicios (id, nombre, valor, detalle, duracion){
 }
 
 //agregar objetos de manera eficaz al array E//
-
 // agregueServicios(1, "Lectura de tarot", 1600, "referencia", "30 - 60min");
 // agregueServicios(2, "Reiki", 1100, "referencia", "30 - 60min");
 // agregueServicios(3, "Sanación", 700, "referencia", "10 - 20min");
