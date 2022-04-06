@@ -65,7 +65,7 @@ function meterAlCarro(id){
         },
         onClick: () => {
             Swal.fire({
-                title: 'Deseas eliminar este articulo?',
+                title: `Deseas eliminar este articulo?`,
                 text: "¡No podrás revertir esto!",
                 icon: 'warning',
                 showCancelButton: true,
