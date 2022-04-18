@@ -166,12 +166,29 @@ img {
 /* CARTAS INSUMOS */
 
 .card-producto {
+    display: flex;
+    flex-wrap: wrap;
     margin: 20px auto;
     /* text-align: center;
     justify-content: center; */
     padding: 20px;
     height: auto;
 }
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* .card-tittle{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+} */
 
 .card-producto:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -204,6 +221,11 @@ img {
     align-self: center;
     color: var(--color-blanco);
     background-color: var(--color-gris);
+}
+
+#listado{
+    display: flex;
+    justify-content: space-around;
 }
 
 /* LIBRERIA Toastify */
