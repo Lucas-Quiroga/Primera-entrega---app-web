@@ -1,6 +1,7 @@
 // import {insumosElegidos} from "./carrito.js"
 // import {meterAlCarro} from "./carrito.js"
 
+//Cargue el fetch local para crear las cards asi podes tener mas rapido los datos
 let listElegidos = document.getElementById("listado");
 const returnProducts = async () => {
 const insumos = await fetch("/insumos.json")
