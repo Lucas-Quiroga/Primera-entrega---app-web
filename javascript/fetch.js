@@ -1,6 +1,3 @@
-// import {insumosElegidos} from "./carrito.js"
-// import {meterAlCarro} from "./carrito.js"
-
 //Cargue el fetch local para crear las cards asi podes tener mas rapido los datos
 let listElegidos = document.getElementById("listado");
 const returnProducts = async () => {
@@ -24,16 +21,25 @@ const insumos = await fetch("/insumos.json")
                               // document.getElementById(`${insumos.id}`).onclick = () => meterAlCarro(`${insumos.id}`);
         });
     };
+     returnProducts();
 
-    // let botonSaludar = document.getElementById("hola");
-    // botonSaludar.addEventListener("click", respuestaClick);
-    // function respuestaClick(){
-    //   console.log("Respuesta evento");
-    // }
-    // let botonprobando=document.querySelector(".btn btn-dark")
-    // botonprobando.onclick= () => {console.log("Funciona")}; 
 
-    // let botonprobando=document.getElementById("probando");
-    // botonprobando.addEventListener("click", ()=>{alert("Funciona")});
 
-    returnProducts();
+     const productos2 = document.createElement("div")
+     async function viendoCard () {
+     const esperandoFetch = await fetch("/insumos.json")
+     .then((resp) => resp.json())
+     .then((data) => {
+        const productos = document.createElement("div")
+        productos.setAttribute("class", "card")
+        productos.innerHTML = ` <img class="card-img-top" src="${product.foto}" alt="Card image cap">
+                                <div class="card-body">
+                                <h5 class="card-title">${product.nombre}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make upthe bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>`
+                                productos2.appendChild(productos);
+     })
+    }
+
+    viendoCard();
