@@ -96,7 +96,7 @@ img {
 
 #servicios-div{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 #titulo-servicio{
@@ -165,7 +165,7 @@ img {
 
 /* CARTAS INSUMOS */
 
-.card-producto {
+#cardlist{
     display: flex;
     flex-wrap: wrap;
     margin: 20px auto;
