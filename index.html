@@ -19,6 +19,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <!-- ESTILO LIBRERIA -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- TITULO -->
   <title>Fetch| Quiroga, lucas - Comisión 25420</title>
 </head>
@@ -44,9 +45,86 @@
   </nav>
     <!-- SERVICIOS -->
     <h2 id="titulo-servicio">Servicios</h2>
-  <div id="servicios-div">
+  <div id="servicios-div" data-aos="flip-left" data-aos-duration="3000">
     <section id="sec-servicios"></section>
   </div>
+  <div class="container">
+    <div class="row" id="contenedor-productos"></div>
+  </div>
+    <div class="container">
+        <h1 class="text-center">Carrito</h1>
+        <hr>
+
+        <div class="my-5">
+            <h4>Carrito de compras</h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Acción</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody id="items"></tbody>
+              <tfoot>
+                <tr id="footer-carrito">
+                    <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+        
+
+
+    </div>
+
+    <template id="template-footer">
+        <th scope="row" colspan="2">Total productos</th>
+        <td>10</td>
+        <td>
+            <button class="btn btn-success btn-sm" id="vaciar-carrito">
+                Finalizar compra
+            </button>
+        </td>
+        <td class="font-weight-bold">$ <span>5000</span></td>
+    </template>
+    
+    <template id="template-carrito">
+      <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td></td>
+        <td>
+            <button class="btn btn-info btn-sm">
+                +
+            </button>
+            <button class="btn btn-danger btn-sm">
+                -
+            </button>
+        </td>
+        <td> <span></span></td>
+      </tr>
+    </template>
+
+    <template id="template-productos">
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card">
+                <img src="" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">
+                      Café
+                  </h5>
+                  <p class="card-text">$ <span>5000</span></p>
+                  <button class="btn btn-dark">
+                      Comprar
+                  </button>
+                </div>
+              </div>
+        </div>
+    </template>
     <!-- INSUMOS -->
     <h2 id="titulo-producto">Productos</h2>
     <div id="listado">
@@ -61,7 +139,7 @@
   </div>
   <!-- FORMULARIO DE USUARIO -->
   <h2 id="titulo-form">Ponte en contacto con nosotros</h2>
-  <form id="formulario">
+  <form id="formulario" data-aos="fade-up">
     <div class="row">
       <div class="col">
         <input id="inputNombre" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
@@ -95,5 +173,9 @@
   <!-- LIBRERIAS -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
