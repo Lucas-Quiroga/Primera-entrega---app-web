@@ -38,6 +38,41 @@ const detectarBotones = (data) => {
 
   botones.forEach(btn => {
       btn.addEventListener('click', () => {
+        Toastify({
+                text: "Agregado al carrito \n (pulsa para borrar)",
+                duration: 3000,
+                className: "textoToastify",
+                style: {
+                  background: 'lightgreen'
+                },
+                onClick: () => {
+                  Swal.fire({
+                    title: `Deseas eliminar el articulo "${producto.title}"?`,
+                    text: "Podras agregarlo luego",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, eliminarlo!',
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        const producto = carrito[btn.dataset.id]
+                        producto.cantidad--
+                        if (producto.cantidad === 0) {
+                            delete carrito[btn.dataset.id]
+                        } else {
+                            carrito[btn.dataset.id] = { ...producto }
+                        }
+                        pintarCarrito()
+                      Swal.fire(
+                        'Borrado!',
+                        'Borrado del carrito',
+                        'success'
+                      )
+                    }
+                  })
+                }
+              }).showToast()
           // console.log(btn.dataset.id)
           const producto = data.find(item => item.id === parseInt(btn.dataset.id))
           producto.cantidad = 1
@@ -71,7 +106,6 @@ const pintarCarrito = () => {
       //botones
       template.querySelector('.btn-info').dataset.id = producto.id
       template.querySelector('.btn-danger').dataset.id = producto.id
-
       const clone = template.cloneNode(true)
       fragment.appendChild(clone)
   })
@@ -80,7 +114,6 @@ const pintarCarrito = () => {
 
   pintarFooter()
   accionBotones()
-
 }
 
 const footer = document.querySelector('#footer-carrito')
@@ -114,6 +147,13 @@ const pintarFooter = () => {
 
   const boton = document.querySelector('#vaciar-carrito')
   boton.addEventListener('click', () => {
+    Swal.fire({
+            width: 2500,
+            title: `Total a pagar: $${nPrecio}`,
+            text: 'En breves nos pondremos en contacto!',
+            icon: 'success',
+            confirmButtonText: 'Salir'
+          })
       carrito = {}
       pintarCarrito()
   })
@@ -147,6 +187,7 @@ const accionBotones = () => {
               carrito[btn.dataset.id] = { ...producto }
           }
           pintarCarrito()
+          
       })
   })
 }

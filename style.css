@@ -134,6 +134,25 @@ img {
     align-items: flex-end;
 }
 
+/* INSUMOS FINAL */
+#insumosDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+#insumosDiv2{
+    margin-left: 10%;
+    margin-top: 40px;
+}
+
+.card{
+    width: 15rem;
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  } 
+
 /* CARRITO */
 
 #carrito-div{
@@ -260,4 +279,8 @@ img {
 
 #footer{
     text-align: center;
+}
+
+.card-img-top{
+    width: 350rem;
 }
