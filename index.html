@@ -10,6 +10,8 @@
     content="Lecturas de tarot online. Hacé tu pedido, pagalo online y recibi la lectura mediante una videollamada." />
   <!-- ESTILO -->
   <link rel="stylesheet" href="style.css">
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/f2ccc91086.js" crossorigin="anonymous"></script>
   <!-- ICONO -->
   <link rel="icon" href="img/Tarot.ico">
   <!-- BOOSTRAP -->
@@ -39,7 +41,7 @@
     <ul>
       <li><a href="#Inicio">Inicio</a></li>
       <li><a href="#formulario">Contacto</a></li>
-      <li><a href="#container">Producto</a></li>
+      <li><a href="#titulo-producto">Producto</a></li>
       <li><a href="#titulo-servicio">Servicios</a></li>
     </ul>
   </nav>
@@ -48,7 +50,7 @@
   <div id="servicios-div" data-aos="flip-left" data-aos-duration="3000">
     <section id="sec-servicios"></section>
   </div>
-
+  <h2 id="titulo-producto">Productos</h2>
   <!-- INSUMOS -->
   <div id="insumosDiv">
     <div id="insumosDiv2">
@@ -57,27 +59,7 @@
   </div>
 </div>
     <div class="container">
-
-        <div class="my-5">
-            <h4>Su compra:</h4>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Item</th>
-                  <th scope="col">Cantidad</th>
-                  <th scope="col">Acción</th>
-                  <th scope="col">Total</th>
-                </tr>
-              </thead>
-              <tbody id="items"></tbody>
-              <tfoot>
-                <tr id="footer-carrito">
-                    <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
+        
 
         
 
@@ -128,6 +110,31 @@
               </div>
         </div>
     </template>
+    <!-- MODAL -->
+    <dialog>
+      <div class="my-5">
+        <h4>Su compra:</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Item</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Acción</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody id="items"></tbody>
+          <tfoot>
+            <tr id="footer-carrito">
+                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <button id="cancel">Salir</button>
+    </dialog>
+    <button id="show">abrir modal</button>
   </div>
     <!-- INSUMOS
     <h2 id="titulo-producto">Productos</h2>
@@ -140,7 +147,7 @@
   <!-- CARRITO -->
   <!-- <div id="carrito-div">
     <section id="sec-carrito"></section>
-  </div> --> -->
+  </div> --> 
   <!-- FORMULARIO DE USUARIO -->
   <h2 id="titulo-form">Ponte en contacto con nosotros</h2>
   <form id="formulario" data-aos="fade-up">

@@ -120,7 +120,7 @@ img {
 #titulo-producto{
     text-align: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .Producto{
@@ -138,6 +138,8 @@ img {
 #insumosDiv{
     display: flex;
     flex-direction: column;
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
 #insumosDiv2{
@@ -283,4 +285,21 @@ img {
 
 .card-img-top{
     width: 350rem;
+}
+
+/* MODAL */
+
+dialog{
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 25em;
+}
+
+#show {
+    background-color: lightgreen;
+    height: 4em;
+    width: 10em;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 2em;
 }
