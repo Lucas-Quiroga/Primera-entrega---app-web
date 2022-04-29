@@ -10,8 +10,6 @@
     content="Lecturas de tarot online. Hacé tu pedido, pagalo online y recibi la lectura mediante una videollamada." />
   <!-- ESTILO -->
   <link rel="stylesheet" href="style.css">
-  <!-- FONT AWESOME -->
-  <script src="https://kit.fontawesome.com/f2ccc91086.js" crossorigin="anonymous"></script>
   <!-- ICONO -->
   <link rel="icon" href="img/Tarot.ico">
   <!-- BOOSTRAP -->
@@ -46,23 +44,22 @@
     </ul>
   </nav>
     <!-- SERVICIOS -->
+    <div class="fondoColor">
     <h2 id="titulo-servicio">Servicios</h2>
   <div id="servicios-div" data-aos="flip-left" data-aos-duration="3000">
+  </div>
     <section id="sec-servicios"></section>
   </div>
+  <div class="fondoColor2">
   <h2 id="titulo-producto">Productos</h2>
   <!-- INSUMOS -->
-  <div id="insumosDiv">
+  <div id="insumosDiv" data-aos="fade-left"> 
     <div id="insumosDiv2">
   <div class="container">
     <div class="row" id="contenedor-productos"></div>
   </div>
 </div>
     <div class="container">
-        
-
-        
-
 
     </div>
 
@@ -113,7 +110,7 @@
     <!-- MODAL -->
     <dialog>
       <div class="my-5">
-        <h4>Su compra:</h4>
+        <h4 id="h4-modal">SU COMPRA:</h4>
         <table class="table">
           <thead>
             <tr>
@@ -133,9 +130,14 @@
         </table>
       </div>
       <button id="cancel">Salir</button>
+
     </dialog>
-    <button id="show">abrir modal</button>
+    <button id="show" class="btn btn1"><svg xmlns="http://www.w3.org/2000/svg" width="16" id="cart-icon" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+      <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+    </svg></button>
+    
   </div>
+</div>
     <!-- INSUMOS
     <h2 id="titulo-producto">Productos</h2>
     <div id="listado">
@@ -149,6 +151,7 @@
     <section id="sec-carrito"></section>
   </div> --> 
   <!-- FORMULARIO DE USUARIO -->
+  <div class="fondoColor3">
   <h2 id="titulo-form">Ponte en contacto con nosotros</h2>
   <form id="formulario" data-aos="fade-up">
     <div class="row">
@@ -175,6 +178,7 @@
     <p>© LUCAS QUIROGA 2022</p>
     <p>Todos los derechos reservados</p>
   </footer>
+</div>
   <!-- JAVASCRIPT -->
   <script src="javascript/main.js"></script>
   <script src="javascript/insumos.js"></script>
@@ -188,5 +192,6 @@
   <script>
     AOS.init();
   </script>
+  
 </body>
 </html>

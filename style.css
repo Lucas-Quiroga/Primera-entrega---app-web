@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 /* COLORES */
 :root {
     --color-blanco: #f5f5f5;
@@ -44,7 +43,7 @@ img {
     padding: 0;
     height: 40px;
     width: 100%;
-    background: beige;
+    background: #E9D5DA;
     box-sizing: border-box;
     top: 0px;
     z-index: 10;
@@ -97,17 +96,30 @@ img {
 #servicios-div{
     display: flex;
     justify-content: space-evenly;
+    background-color: #827397;
+}
+
+.fondoColor{
+    background-color: #827397;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #titulo-servicio{
     text-align: center;
     justify-content: center;
     margin-top: 10px;
+    background: #827397;
+    text-decoration:underline;
 }
 
 #sec-servicios{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    padding-bottom: 30px;
 }
 
 /* INSUMOS */
@@ -120,7 +132,8 @@ img {
 #titulo-producto{
     text-align: center;
     justify-content: center;
-    margin-top: 20px;
+    padding-top: 20px;
+    text-decoration:underline;
 }
 
 .Producto{
@@ -135,6 +148,10 @@ img {
 }
 
 /* INSUMOS FINAL */
+
+.fondoColor2{
+    background-color: #4D4C7D;
+}
 #insumosDiv{
     display: flex;
     flex-direction: column;
@@ -265,6 +282,7 @@ img {
     text-align: center;
     position: relative;
     left: 45vh;
+    color: white;
     /* border: 2px solid black; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -272,7 +290,8 @@ img {
 #titulo-form{
     text-align: center;
     justify-content: center;
-    margin-top: 30px;
+    padding-top: 30px;
+    text-decoration:underline;
 }
 
 .form-label{
@@ -287,19 +306,84 @@ img {
     width: 350rem;
 }
 
+.fondoColor3{
+    background-color: #363062;
+}
+
 /* MODAL */
 
 dialog{
     justify-content: center;
     margin: 0 auto;
     margin-top: 25em;
+    height: 30em;
+    width: 300em;
+}
+
+#h4-modal{
+    justify-content: center;
+    text-align: center;
+    margin-top: 2px;
+    text-decoration: underline;
 }
 
 #show {
-    background-color: lightgreen;
-    height: 4em;
-    width: 10em;
+    /* background-color: lightgreen; */
+    height: 3em;
+    width: 7.5em;
     justify-content: center;
     margin: 0 auto;
     border-radius: 2em;
 }
+
+#cart-icon{
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.buttons{
+    text-align:center;
+    margin:50vh;
+  }
+  
+  .btn{
+    border: 1px solid #73C6D9;
+    background: none;
+    padding: 10px 20px;
+    /* font-size: 20px;
+    font-family: ''; */
+    cursor: pointer;
+    margin: 10px;
+    transition: .8s;
+    position: relative;
+    overflow: hidden;
+    border-radius:5px;
+  }
+  
+  .btn1{
+    color: #73C6D9;
+  }
+  
+  .btn1:hover{
+    color: #fff;
+  }
+  
+  .btn:before{
+    content:'';
+    position:absolute;
+    left:0;
+    width:100%;
+    height:0%;
+    background: #73C6D9;
+    z-index: -1;
+    transition:.8s;
+  }
+  
+  .btn1:before{
+    top:0;
+    border-radius: 0 0 50% 50%;
+  }
+  
+  .btn1:hover:before{
+    height: 180%;
+  }
