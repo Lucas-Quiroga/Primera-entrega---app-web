@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lucas-Quiroga/Primera-entrega---app-web.git"
+    "url": "git+https://github.com/Lucas-Quiroga/Proyecto-Final-Js.git"
   },
   "author": "Lucas Quiroga",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Lucas-Quiroga/Primera-entrega---app-web/issues"
+    "url": "https://github.com/Lucas-Quiroga/Proyecto-Final-Js/issues"
   },
-  "homepage": "https://github.com/Lucas-Quiroga/Primera-entrega---app-web#readme"
+  "homepage": "https://github.com/Lucas-Quiroga/Proyecto-Final-Js#readme"
 }
