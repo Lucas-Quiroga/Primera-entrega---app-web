@@ -1,0 +1,19 @@
+{
+  "name": "primera-entrega---app-web",
+  "version": "1.0.0",
+  "description": "Proyecto final para el curso de Javascript de Coder House hecho por Lucas Quiroga",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucas-Quiroga/Primera-entrega---app-web.git"
+  },
+  "author": "Lucas Quiroga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucas-Quiroga/Primera-entrega---app-web/issues"
+  },
+  "homepage": "https://github.com/Lucas-Quiroga/Primera-entrega---app-web#readme"
+}
