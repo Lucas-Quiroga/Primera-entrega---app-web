@@ -43,7 +43,7 @@ img {
     padding: 0;
     height: 40px;
     width: 100%;
-    background: #E9D5DA;
+    background: #FFEEEE;
     box-sizing: border-box;
     top: 0px;
     z-index: 10;
@@ -100,7 +100,7 @@ img {
 }
 
 .fondoColor{
-    background-color: #827397;
+    background-color: #FFF6EA;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -111,7 +111,7 @@ img {
     text-align: center;
     justify-content: center;
     margin-top: 10px;
-    background: #827397;
+    background: #FFF6EA;
     text-decoration:underline;
 }
 
@@ -150,7 +150,7 @@ img {
 /* INSUMOS FINAL */
 
 .fondoColor2{
-    background-color: #4D4C7D;
+    background-color: #F7E9D7;
 }
 #insumosDiv{
     display: flex;
@@ -307,7 +307,7 @@ img {
 }
 
 .fondoColor3{
-    background-color: #363062;
+    background-color: #EBD8C3;
 }
 
 /* MODAL */
@@ -316,8 +316,16 @@ dialog{
     justify-content: center;
     margin: 0 auto;
     margin-top: 25em;
+    padding: 0px;
     height: 30em;
     width: 300em;
+}
+
+dialog #cancel{
+    justify-content: center;
+    text-align: center;
+    border-radius: 2px solid red
+
 }
 
 #h4-modal{
@@ -339,6 +347,7 @@ dialog{
 #cart-icon{
     height: 1.5em;
     width: 1.5em;
+    color: black;
 }
 
 .buttons{
@@ -358,32 +367,39 @@ dialog{
     position: relative;
     overflow: hidden;
     border-radius:5px;
+    z-index: 1000;
   }
   
   .btn1{
     color: #73C6D9;
+    z-index: 10;
+    z-index: 1000;
   }
   
   .btn1:hover{
     color: #fff;
+    z-index: 1000;
   }
   
-  .btn:before{
+  .btn:before { 
     content:'';
     position:absolute;
     left:0;
     width:100%;
     height:0%;
-    background: #73C6D9;
+    background: #73C6D9 ;
     z-index: -1;
     transition:.8s;
+    z-index: 1000;
   }
   
   .btn1:before{
     top:0;
     border-radius: 0 0 50% 50%;
+    z-index: 1000;
   }
   
   .btn1:hover:before{
     height: 180%;
+    z-index: 1000;
   }
