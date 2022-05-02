@@ -1,3 +1,5 @@
+//en esta sección de insumos era la que venia probando antes de la entrega final de la cual me gustaba pero en este proyecto final decidi sacarla y no usarla ya que aplique el fetch con los insumos.json como figura en el "carrito.js", de igualmente decidi dejarla para que vea como tambien podría haber sido con el constructor y si le aplico un forEach podria transformarlas en cartas con el boostrap.
+
 // ARRAY DE LOS PRODUCTOS
 const insumos = [{id: 1, nombre: "Velas", precio: 200,foto: "./img/1.jpg",stock: 1000},
 {id: 2,nombre: "Collares",precio: 400,foto: "./img/2.jpg",stock: 1000},

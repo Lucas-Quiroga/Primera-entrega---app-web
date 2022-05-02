@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
   <!-- SEO -->
   <meta name="keywords" content="lectura de tarot, limpieza energetica, reiki, sanación" />
   <meta name="description"
-    content="Lecturas de tarot online. Hacé tu pedido, pagalo online y recibi la lectura mediante una videollamada." />
+    content="Lecturas de tarot online. Hacé tu consulta, abonalo online y recibi el servicio mediante una videollamada." />
   <!-- ESTILO -->
   <link rel="stylesheet" href="style.css">
   <!-- ICONO -->
@@ -21,19 +22,23 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- TITULO -->
-  <title>Fetch| Quiroga, lucas - Comisión 25420</title>
+  <title>Proyecto Final JS | Quiroga, lucas - Comisión 25420</title>
 </head>
 <body>
+
   <!-- HEADER -->
+
   <header id="Inicio">
-    <img class="circulo" src="img/circulo.jpg" alt="">
+    <img class="circulo" src="img/circulo1.jpeg" alt="Paula Dominguez">
     <h1>Paula Dominguez</h1>
-    <h2>Vidente</h2>
+    <h2>Vidente - Tarotista</h2>
   </header>
+
   <!-- BARRA DE NAVEGACION -->
+
   <nav id="navbar">
     <div id="nombre-barra">
-      <a href="img/Tarot.ico"><img class="circulo" src="img/Tarot.ico" alt="small logo" /> <span>Paula Dominguez
+      <a href="img/Tarot.ico"><img class="circulo" src="img/Tarot.ico" alt="small logo" /> <span>Paula |
           <small>Vidente</small></span></a>
     </div>
     <ul>
@@ -43,156 +48,175 @@
       <li><a href="#titulo-servicio">Servicios</a></li>
     </ul>
   </nav>
-    <!-- SERVICIOS -->
-    <div class="fondoColor">
+
+  <!-- SERVICIOS -->
+
+  <div class="fondoColor">
     <h2 id="titulo-servicio">Servicios</h2>
-  <div id="servicios-div" data-aos="flip-left" data-aos-duration="3000">
-  </div>
+    <div id="servicios-div" data-aos="flip-left" data-aos-duration="3000"></div>
     <section id="sec-servicios"></section>
   </div>
   <div class="fondoColor2">
-  <h2 id="titulo-producto">Productos</h2>
-  <!-- INSUMOS -->
-  <div id="insumosDiv" data-aos="fade-left"> 
-    <div id="insumosDiv2">
-  <div class="container">
-    <div class="row" id="contenedor-productos"></div>
-  </div>
-</div>
-    <div class="container">
+    <h2 id="titulo-producto">Productos</h2>
 
-    </div>
+    <!-- INSUMOS -->
 
-    <template id="template-footer">
-        <th scope="row" colspan="2">Total productos</th>
+    <div id="insumosDiv" data-aos="fade-left">
+      <div id="insumosDiv2">
+        <div class="container">
+
+          <!-- contenedorDeProductos / carrito.js -->
+
+          <div class="row" id="contenedor-productos"></div>
+        </div>
+      </div>
+      <div class="container">
+      </div>
+
+      <!-- FOOTER DEL USUARIO EN EL MODAL -->
+
+      <template id="template-footer">
+        <th scope="row" colspan="2">Total de los productos:</th>
         <td>10</td>
         <td>
-            <button class="btn btn-success btn-sm" class="button2" id="vaciar-carrito">
-                Finalizar compra
-            </button>
+          <!-- BOTON DE FINALIZAR COMPRA / VACIAR CARRITO -->
+
+          <button class="btn btn-success btn-sm" class="button2" id="vaciar-carrito">
+            Finalizar compra
+          </button>
         </td>
         <td class="font-weight-bold">$ <span>5000</span></td>
-    </template>
-    
-    <template id="template-carrito">
-      <tr>
-        <th scope="row"></th>
-        <td></td>
-        <td></td>
-        <td>
+      </template>
+      
+      <!-- SECCION DE COMPRA DE MOVIMIENTOS DEL USUARIO -->
+
+      <template id="template-carrito">
+        <tr>
+          <th scope="row"></th>
+          <td></td>
+          <td></td>
+          <td>
             <button class="btn btn-info btn-sm">
-                +
+              +
             </button>
             <button class="btn btn-danger btn-sm">
-                -
+              -
             </button>
-        </td>
-        <td> <span></span></td>
-      </tr>
-    </template>
+          </td>
+          <td> <span></span></td>
+        </tr>
+      </template>
 
-    <!-- cartas de los productos -->
-    <template id="template-productos">
+      <!-- CARTAS DE LOS PRODUCTOS -->
+
+      <template id="template-productos">
         <div class="col-12 col-md-4 mb-3">
-            <div class="card">
-                <img src="" class="card-img-top" width="10%"alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">
-                      Café
-                  </h5>
-                  <p class="card-text">$ <span>5000</span></p>
-                  <button class="btn btn-dark">
-                      Comprar
-                  </button>
-                </div>
-              </div>
+          <div class="card">
+            <img src="" class="card-img-top" width="10%" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">
+                
+              </h5>
+              <p class="card-text"> <span></span></p>
+              <button class="btn btn-dark">
+                Comprar
+              </button>
+            </div>
+          </div>
         </div>
-    </template>
-    <!-- MODAL -->
-    <dialog>
-      <div class="my-5">
-        <h4 id="h4-modal">SU COMPRA:</h4>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Item</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">Acción</th>
-              <th scope="col">Total</th>
-            </tr>
-          </thead>
-          <tbody id="items"></tbody>
-          <tfoot>
-            <tr id="footer-carrito">
-                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-      <button id="cancel">Salir</button>
+      </template>
 
+      <!-- MODAL -->
+
+      <dialog>
+        <div class="my-5">
+          <h4 id="h4-modal">SU COMPRA:</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Item</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Acción</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+
+            <!-- itemsDeProductos / carrito.js -->
+
+            <tbody id="items"></tbody>
+            <tfoot>
+
+              <!-- footerUsuario / carrito.js -->
+
+              <tr id="footer-carrito">
+                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <button id="cancel">Salir</button>
     </dialog>
-    <button id="show" class="btn btn1"><svg xmlns="http://www.w3.org/2000/svg" width="16" id="cart-icon" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-      <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-    </svg></button>
-    
-  </div>
-</div>
-    <!-- INSUMOS
-    <h2 id="titulo-producto">Productos</h2>
-    <div id="listado">
+
+    <!-- ICONO CART-ICON -->
+
+      <button id="show" class="btn btn1"><svg xmlns="http://www.w3.org/2000/svg" width="16" id="cart-icon" height="16"
+          fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+          <path
+            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg></button>
     </div>
-  <div id="productos-div">
-    <section class="Producto" id="sec-insumos"></section>
   </div>
-  <div id="cardlist"></div>
-  <!-- CARRITO -->
-  <!-- <div id="carrito-div">
-    <section id="sec-carrito"></section>
-  </div> --> 
+
   <!-- FORMULARIO DE USUARIO -->
+
   <div class="fondoColor3">
-  <h2 id="titulo-form">Ponte en contacto con nosotros</h2>
-  <form id="formulario" data-aos="fade-up">
-    <div class="row">
-      <div class="col">
-        <input id="inputNombre" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+    <h2 id="titulo-form">Ponte en contacto con nosotros</h2>
+    <form id="formulario" data-aos="fade-up">
+      <div class="row">
+        <div class="col">
+          <input id="inputNombre" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+        </div>
+        <div class="col">
+          <input id="inputApellido" type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Email</label>
+          <input id="inputEmail" type="email" class="form-control" id="exampleFormControlInput1"
+            placeholder="nombre@ejemplo.com">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Dejanos un comentario</label>
+          <textarea class="form-control" id="textArea" rows="3"></textarea>
+          <input type="submit" name="" id="botonEnvio" value="Enviar">
+        </div>
       </div>
-      <div class="col">
-        <input id="inputApellido" type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
-      </div>
-      <div class="mb-3">
-        <label for="" class="form-label">Email</label>
-        <input id="inputEmail" type="email" class="form-control" id="exampleFormControlInput1"
-          placeholder="nombre@ejemplo.com">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Dejanos un comentario</label>
-        <textarea class="form-control" id="textArea" rows="3"></textarea>
-        <input type="submit" name="" id="botonEnvio" value="Enviar">
-      </div>
-    </div>
-  </form>
-  <!-- FOOTER -->
-  <footer id="footer">
-    <p>© LUCAS QUIROGA 2022</p>
-    <p>Todos los derechos reservados</p>
-  </footer>
-</div>
+    </form>
+
+    <!-- FOOTER -->
+
+    <footer id="footer">
+      <p>© LUCAS QUIROGA 2022</p>
+      <p>Todos los derechos reservados</p>
+    </footer>
+  </div>
+
   <!-- JAVASCRIPT -->
-  <script src="javascript/main.js"></script>
+
+  <script src="javascript/formulario.js"></script>
   <script src="javascript/insumos.js"></script>
   <script src="javascript/servicios.js"></script>
   <script src="javascript/carrito.js" type="module"></script>
-  <script src="javascript/fetch.js" type="module"></script>
+  <script src="javascript/modal.js" type="module"></script>
+
   <!-- LIBRERIAS -->
+  
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
-  
+
 </body>
 </html>

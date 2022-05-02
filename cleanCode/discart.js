@@ -197,6 +197,14 @@
 // };
 // };
 
+// let carritoEjemplo = {}
+// carritoEjemplo = {
+//     1: {id: 1, titulo: 'cafe', precio: 500, cantidad: 3},
+//     2: {id: 3, titulo: 'pizza', precio: 100, cantidad: 2},
+// }
+
+// console.log(carritoEjemplo[1])
+
 /*--------------------------------------------------------------------------------------------------------------------------------*/
 
 // <!-- fetch.js -->
@@ -660,3 +668,20 @@
   
 //   //inicializamos el carrito
 //   let carrito = {}
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------*/
+// HTML 
+
+// <!-- INSUMOS
+// <h2 id="titulo-producto">Productos</h2>
+// <div id="listado">
+// </div>
+// <div id="productos-div">
+// <section class="Producto" id="sec-insumos"></section>
+// </div>
+// <div id="cardlist"></div>
+// <!-- CARRITO -->
+// <!-- <div id="carrito-div">
+// <section id="sec-carrito"></section>
+// </div> -->

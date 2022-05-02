@@ -18,7 +18,7 @@ class Servicios {
 }
 
 let serviciosProductos = document.getElementById("sec-servicios");
-
+//creamos las cartas de los servicios
 function crearCard2 (servicios) {
     let card2 = document.createElement("div");
     card2.setAttribute("class", "card card-producto");
@@ -32,7 +32,7 @@ function crearCard2 (servicios) {
     <p class="card-text">  ${servicios.detalle} </p>
     <p class="card-text"> Duración: ${servicios.duracion} </p>
     <p class="card-text"> Precio: $${servicios.precio} </p>
-    <a href="#formulario"><button type="button" class="btn btn-dark">Solicitar información</button></a>`;
+    <a href="#formulario"><buttonn class="btn btn-secondary">Solicitar información</buttonn></a>`;
     card2.appendChild(cardBody2);
     cardBody2.setAttribute("class", "card-body");
 }
@@ -43,7 +43,6 @@ for (const servicio of servicios){
 }
 
 //funcion que agrega el servicio al array en particular//
-
 function agregueServicios (id, nombre, valor, detalle, duracion){
     let objetoAgregar = new Servicios(id, nombre, valor, detalle, duracion);
     servicios.push(objetoAgregar);

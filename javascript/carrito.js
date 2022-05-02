@@ -1,3 +1,10 @@
+//inicializamos las constantes a usar globalmente
+const contenedorDeProductos = document.querySelector('#contenedor-productos')
+const itemsDeProductos = document.querySelector('#items')
+const footerUsuario = document.querySelector('#footer-carrito')
+
+//inicializamos el carrito donde vamos a volcar la información
+let carrito = {}
 
 //esperamos que se lea todo el documento HTML y luego ejecuta todo lo siguiente
 document.addEventListener("DOMContentLoaded", () => {
@@ -5,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //guardamos en el local storge el carrito si existe
   if(localStorage.getItem("carrito")){
     carrito = JSON.parse(localStorage.getItem("carrito"))
-    pintarCarrito()
+    verCarritoUsuario()
   }
 })
 
@@ -14,8 +21,7 @@ const fetchData = async () => {
   try {
       const res = await fetch("/insumos.json")
       const data = await res.json()
-      // console.log(data)
-      pintarProductos(data)
+      productosCards(data)
       detectarBotones(data)
   } catch (error) {
       console.log(error)
@@ -23,25 +29,21 @@ const fetchData = async () => {
 }
 
  //con la funcion siguiente armamos las cards de los productos ya con la información que tenemos
-const productContainer = document.querySelector('#contenedor-productos')
-const pintarProductos = (data) => {
+const productosCards = (data) => {
   const template = document.querySelector('#template-productos').content
   const fragment = document.createDocumentFragment()
-  // console.log(template)
   data.forEach(producto => {
-      // console.log(producto)
-      template.querySelector('img').setAttribute('src', producto.thumbnailUrl)
-      template.querySelector('h5').textContent = producto.title
+      template.querySelector('img').setAttribute('src', producto.foto)
+      template.querySelector('h5').textContent = producto.nombre
       template.querySelector('p span').textContent = producto.precio
       template.querySelector('button').dataset.id = producto.id
       const clone = template.cloneNode(true)
       fragment.appendChild(clone)
   })
-  productContainer.appendChild(fragment)
+  contenedorDeProductos.appendChild(fragment)
 }
 
-//inicializamos el carrito donde vamso a volvar la información
-let carrito = {}
+
 
  //una vez ya capturado toda la información y ya tener las cards armadas pasamos a crear un función donde detecte cuando el usuario haga click en el boton asi podemos ubicar el ID de los productos y meterlos en el carrito.(+libreria)
 const detectarBotones = (data) => {
@@ -59,7 +61,7 @@ const detectarBotones = (data) => {
                 },
                 onClick: () => {//si hace click en el cartel de la libreria "ToastifyJS" le damos la opción al usuario de eliminar el producto seleccionado con su respectivo nombre
                   Swal.fire({
-                    title: `Deseas eliminar el articulo "${producto.title}"?`,
+                    title: `Deseas eliminar el articulo "${producto.nombre}"?`,
                     text: "Podras agregarlo luego",
                     icon: 'warning',
                     showCancelButton: true,
@@ -75,7 +77,7 @@ const detectarBotones = (data) => {
                         } else {
                             carrito[btn.dataset.id] = { ...producto }
                         }
-                        pintarCarrito()
+                        verCarritoUsuario()
                       Swal.fire(
                         'Borrado!',
                         'Borrado del carrito',
@@ -93,17 +95,16 @@ const detectarBotones = (data) => {
           }
           carrito[producto.id] = { ...producto } //
           // console.log('carrito', carrito)
-          pintarCarrito()
+          verCarritoUsuario()
       })
   })
 }
 
 //ahora armamos la funcion para que en la seccion de compra el usuario pueda ver los movimientos que está haciendo
-const items = document.querySelector('#items')
-const pintarCarrito = () => {
+const verCarritoUsuario = () => {
 
   //los items va a partir desde vacio
-  items.innerHTML = ''
+  itemsDeProductos.innerHTML = ''
 
   const template = document.querySelector('#template-carrito').content
   const fragment = document.createDocumentFragment()
@@ -111,7 +112,7 @@ const pintarCarrito = () => {
   Object.values(carrito).forEach(producto => {
       // console.log('producto', producto)
       template.querySelector('th').textContent = producto.id
-      template.querySelectorAll('td')[0].textContent = producto.title
+      template.querySelectorAll('td')[0].textContent = producto.nombre
       template.querySelectorAll('td')[1].textContent = producto.cantidad
       template.querySelector('span').textContent = producto.precio * producto.cantidad // cada vez que aumentemos la cantidad lo multiplicamos por su precio asi nos da el total
       
@@ -124,24 +125,23 @@ const pintarCarrito = () => {
       // aplicamos la misma logica
   })
 
-  items.appendChild(fragment)
+  itemsDeProductos.appendChild(fragment)
 
-  pintarFooter()
-  accionBotones()
+  verFooterUsuario()
+  btnAgregarOEliminar()
   
   //guardamos el carrito para que si reinicia la pagina se siga mantentiendo su compra
   localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
 // hacemos una funcion para modificar el footer del usario de forma dinamica
-const footer = document.querySelector('#footer-carrito')
-const pintarFooter = () => {
+const verFooterUsuario = () => {
 
   //inicializamos el footer en vacio
-  footer.innerHTML = ''
+  footerUsuario.innerHTML = ''
 
   if (Object.keys(carrito).length === 0) { //si no existen elementos le mostramos al usario un cartel que diga:
-      footer.innerHTML = `
+      footerUsuario.innerHTML = `
       <th scope="row" colspan="5">No hay productos en el carrito</th>
       `
       return
@@ -151,17 +151,17 @@ const pintarFooter = () => {
   const fragment = document.createDocumentFragment()
 
   // usamos el "reduce()" para ir sumando la cantidad y el precio de cada uno de los productos
-  const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
-  const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
+  const cantidadX = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
+  const precioX = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
 
  //accedemos a los template para agarrar la cantidad y el precio para modificarlos y mostrarlos en el footer
-  template.querySelectorAll('td')[0].textContent = nCantidad
-  template.querySelector('span').textContent = nPrecio
+  template.querySelectorAll('td')[0].textContent = cantidadX
+  template.querySelector('span').textContent = precioX
 
   const clone = template.cloneNode(true)
   fragment.appendChild(clone)
 
-  footer.appendChild(fragment)
+  footerUsuario.appendChild(fragment)
 
 
   //llamamos al boton y hacemos una funcion en donde pueda vaciar el carrito y de paso le mostramos un cartel para que sepa el total de su compra
@@ -169,7 +169,7 @@ const pintarFooter = () => {
   boton.addEventListener('click', () => {
     Swal.fire({
             width: 2500,
-            title: `Total a pagar: $${nPrecio}`,
+            title: `Total a pagar: $${precioX}`,
             text: 'En breves nos pondremos en contacto!',
             icon: 'success',
             confirmButtonText: 'Salir',
@@ -182,13 +182,13 @@ const pintarFooter = () => {
             }
           })
       carrito = {}
-      pintarCarrito()
+      verCarritoUsuario()
   })
 
 }
 
 // por ultimo le damos funcionalidad a los botones de sumar y dismuir de cada uno de los productos que se ve reflejado en la seccion de compra
-const accionBotones = () => {
+const btnAgregarOEliminar = () => {
   //los detectamos
   const botonesAgregar = document.querySelectorAll('#items .btn-info')
   const botonesEliminar = document.querySelectorAll('#items .btn-danger')
@@ -200,7 +200,7 @@ const accionBotones = () => {
           const producto = carrito[btn.dataset.id]
           producto.cantidad ++ //aumentamos la cantidad de ese producto y lo sumamos a la misma linea
           carrito[btn.dataset.id] = { ...producto }
-          pintarCarrito()
+          verCarritoUsuario()
       })
   })
 
@@ -215,16 +215,8 @@ const accionBotones = () => {
           } else {
               carrito[btn.dataset.id] = { ...producto }
           }
-          pintarCarrito()
+          verCarritoUsuario()
           
       })
   })
 }
-
-// let carritoEjemplo = {}
-// carritoEjemplo = {
-//     1: {id: 1, titulo: 'cafe', precio: 500, cantidad: 3},
-//     2: {id: 3, titulo: 'pizza', precio: 100, cantidad: 2},
-// }
-
-// console.log(carritoEjemplo[1])

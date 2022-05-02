@@ -1,31 +1,31 @@
 [{
     "id": 1,
-    "title": "Velas",
+    "nombre": "Velas",
     "precio": 200,
-    "thumbnailUrl": "./img/1.jpg"
+    "foto": "./img/1.jpg"
 },{
     "id": 2,
-    "title": "Collares",
+    "nombre": "Collares",
     "precio": 400,
-    "thumbnailUrl": "./img/2.jpg"
+    "foto": "./img/2.jpg"
 },{
     "id": 3,
-    "title": "Sahumerios",
+    "nombre": "Sahumerios",
     "precio": 300,
-    "thumbnailUrl": "./img/3.jpg"
+    "foto": "./img/3.jpg"
 },{
     "id": 4,
-    "title": "Piramides",
+    "nombre": "Piramides",
     "precio": 1200,
-    "thumbnailUrl": "./img/4.jpg"
+    "foto": "./img/4.jpg"
 },{
     "id": 5,
-    "title": "Buda",
+    "nombre": "Buda",
     "precio": 2200,
-    "thumbnailUrl": "./img/5.jpg"
+    "foto": "./img/5.jpg"
 },{
     "id": 6,
-    "title": "Bomba defumadora",
+    "nombre": "Bomba defumadora",
     "precio": 200,
-    "thumbnailUrl": "./img/6.jpg"
+    "foto": "./img/6.jpg"
     }]
